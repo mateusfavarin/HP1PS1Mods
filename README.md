@@ -11,8 +11,8 @@ Download the mods in the [releases tab](https://github.com/mateusfavarin/HP1PS1M
 ### Debug Menu
 
 * Press select to open the debug menu.
-* Press R1 to use the superspeed cheat.
-* Press L1 to use the flying cheat.
+* Press L1 to use the superspeed cheat.
+* Press R1 to use the flying cheat.
 * Hold R2 and L2 to use the collision off cheat.
 * Press O to save state.
 * Hold X + [ ] to load state.
