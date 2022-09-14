@@ -1,9 +1,10 @@
-#ifndef CHEATMENU_H
-#define CHEATMENU_H
 #include <types.h>
+#include <functions.h>
 #include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
+
 #define IN_GAME_CHEAT_COUNT 5
 
 CustomText ct_toggleCheatsTitle = {
@@ -95,11 +96,11 @@ void ToggleCheats_onBack(void * pauseMenu)
 void Hook_ProcessStrategies()
 {
     ProcessStrategies();
-    if ((customCheats[0]) && (ButtonsHeld & R1))
+    if ((customCheats[0]) && (ButtonsHeld & L1))
     {
         PlayerHorSpeed = 0x1FF;
     }
-    if ((customCheats[1]) && (ButtonsHeld & L1))
+    if ((customCheats[1]) && (ButtonsHeld & R1))
     {
         if (PlayerStrat[40] & 2)    // this flag seems to track whether you jumped or not
             PlayerStrat[14] += 500; // y pos += 500
@@ -127,5 +128,3 @@ CustomMenu cm_cheatMenu = {
     .onSelect = ToggleCheats_onSelect,
     .onBack = ToggleCheats_onBack
 };
-
-#endif

@@ -1,49 +1,6 @@
 #ifndef PAUSE_H
 #define PAUSE_H
 
-enum Buttons {
-    SELECT = 0x1,
-    L3 = 0x2,
-    R3 = 0x4,
-    START = 0x8,
-    UP = 0x10,
-    RIGHT = 0x20,
-    DOWN = 0x40,
-    LEFT = 0x80,
-    L2 = 0x100,
-    R2 = 0x200,
-    L1 = 0x400,
-    R1 = 0x800,
-    TRIANGLE = 0x1000,
-    CIRCLE = 0x2000,
-    CROSS = 0x4000,
-    SQUARE = 0x8000
-};
-
-typedef struct {
-    u32 * PlayerSaveState;
-    u32 * CameraSaveState;
-    u32 hasSaved;
-} SaveStateManager;
-
-typedef struct {
-    u8 tribe;
-    u8 level;
-    u8 map;
-    u8 levelType;
-    u32 loadLevel;
-} LevelSelector;
-
-typedef struct {
-    u32 enableSaveStates;
-    u32 showTimer;
-    u32 showLagTimer;
-    u32 resetProgress;
-    u32 resetTimers;
-    u32 skipIntro;
-    u32 enablePausing;
-} OptionsManager;
-
 typedef struct {
     u8 * text;
     u32 x;
@@ -67,8 +24,19 @@ typedef struct {
 
 void Pause();
 void Unpause();
-void PlayPauseSFX();
-void PlayCursorSFX();
 void HandleCustomPause();
+
+extern CustomMenu cm_debugMenu;
+extern CustomMenu cm_cheatMenu;
+extern CustomMenu cm_selectLevel;
+extern CustomMenu cm_optionsMenu;
+extern CustomMenu cm_level1;
+extern CustomMenu cm_level2;
+extern CustomMenu cm_level3;
+extern CustomMenu cm_level4;
+extern CustomMenu cm_level6;
+extern CustomMenu cm_level7;
+extern CustomMenu cm_level8;
+extern CustomMenu cm_level9;
 
 #endif

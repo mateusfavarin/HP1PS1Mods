@@ -1,6 +1,6 @@
-#ifndef LEVEL9MENU_H
-#define LEVEL9MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -50,8 +50,6 @@ CustomText * ct_level9Arr[] = {&ct_hufflepuff, &ct_ravenclaw, &ct_slytherin, &ct
                                 &ct_ravenclaw2, &ct_slytherin2};
 u8 level9_isSelected[] = {0, 0, 0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level9_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -79,5 +77,3 @@ CustomMenu cm_level9 = {
     .onSelect = Level9_onSelect,
     .onBack = Level9_onBack
 };
-
-#endif

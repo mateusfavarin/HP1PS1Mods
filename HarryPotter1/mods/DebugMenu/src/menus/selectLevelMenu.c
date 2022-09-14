@@ -1,5 +1,3 @@
-#ifndef SELECTLEVELMENU_H
-#define SELECTLEVELMENU_H
 #include <types.h>
 #include "pause.h"
 #include "strings.h"
@@ -85,5 +83,3 @@ CustomMenu cm_selectLevel = {
     .onSelect = SelectLevel_onSelect,
     .onBack = SelectLevel_onBack
 };
-
-#endif

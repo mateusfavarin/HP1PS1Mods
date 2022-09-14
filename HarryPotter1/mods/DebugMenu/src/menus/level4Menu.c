@@ -1,6 +1,6 @@
-#ifndef LEVEL4MENU_H
-#define LEVEL4MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -69,8 +69,6 @@ CustomText * ct_level4Arr[] = {&ct_upperCastleHub, &ct_upperCastle, &ct_voldermo
                                 &ct_sleepingTrollPotions};
 u8 level4_isSelected[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level4_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -98,5 +96,3 @@ CustomMenu cm_level4 = {
     .onSelect = Level4_onSelect,
     .onBack = Level4_onBack
 };
-
-#endif

@@ -1,6 +1,7 @@
-#ifndef OPTIONSMENU_H
-#define OPTIONSMENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
+#include "strings.h"
 #include "pause.h"
 
 CustomText ct_optionsMenuTitle = {
@@ -56,7 +57,6 @@ CustomText * ct_optionsMenuArr[] = {&ct_enableSaveStates, &ct_showTimer, &ct_sho
                                     &ct_resetTimerswhenSelectingLevel,
                                     &ct_skipIntroCutscene, &ct_enablePausingAnywhere};
 
-extern OptionsManager options;
 u8 optionsMenu_isSelected[] = {1, 1, 1, 1, 1, 1, 1};
 
 void OptionsMenu_onSelect(void * pauseMenu)
@@ -98,5 +98,3 @@ CustomMenu cm_optionsMenu = {
     .onSelect = OptionsMenu_onSelect,
     .onBack = OptionsMenu_onBack
 };
-
-#endif

@@ -1,6 +1,6 @@
-#ifndef LEVEL7MENU_H
-#define LEVEL7MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -38,8 +38,6 @@ CustomText * ct_level7Arr[] = {&ct_gringottsBank, &ct_mineCartKnut, &ct_mineCart
                             &ct_mineCartGalleon};
 u8 level7_isSelected[] = {0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level7_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -67,5 +65,3 @@ CustomMenu cm_level7 = {
     .onSelect = Level7_onSelect,
     .onBack = Level7_onBack
 };
-
-#endif

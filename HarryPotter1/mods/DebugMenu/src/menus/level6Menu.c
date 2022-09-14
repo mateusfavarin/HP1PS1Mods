@@ -1,6 +1,6 @@
-#ifndef LEVEL6MENU_H
-#define LEVEL6MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -50,8 +50,6 @@ CustomText * ct_level6Arr[] = {&ct_diagonAlley, &ct_ollivandersWands, &ct_eeylop
                             &ct_magicalMenagerie, &ct_forbbidenForest, &ct_voldermortandTheUnicorn};
 u8 level6_isSelected[] = {0, 0, 0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level6_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -79,5 +77,3 @@ CustomMenu cm_level6 = {
     .onSelect = Level6_onSelect,
     .onBack = Level6_onBack
 };
-
-#endif

@@ -1,6 +1,6 @@
-#ifndef LEVEL3MENU_H
-#define LEVEL3MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -50,8 +50,6 @@ CustomText * ct_level3Arr[] = {&ct_dungeonHub, &ct_4RoomPuzzle, &ct_trolls, &ct_
                                 &ct_quidditchTraining, &ct_theGreatHall};
 u8 level3_isSelected[] = {0, 0, 0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level3_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -81,5 +79,3 @@ CustomMenu cm_level3 = {
     .onSelect = Level3_onSelect,
     .onBack = Level3_onBack
 };
-
-#endif

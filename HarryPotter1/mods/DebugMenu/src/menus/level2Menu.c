@@ -1,6 +1,6 @@
-#ifndef LEVEL2MENU_H
-#define LEVEL2MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -69,8 +69,6 @@ CustomText * ct_level2Arr[] = {&ct_castleGroundsHub, &ct_castleGroundsExtra, &ct
                                 &ct_quidditch3};
 u8 level2_isSelected[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level2_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -98,5 +96,3 @@ CustomMenu cm_level2 = {
     .onSelect = Level2_onSelect,
     .onBack = Level2_onBack
 };
-
-#endif

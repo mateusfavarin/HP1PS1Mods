@@ -1,5 +1,6 @@
 #ifndef TIMER_H
 #define TIMER_H
+
 #include <types.h>
 #define FRAME 16
 #define SECOND (FRAME * 60)
@@ -21,7 +22,6 @@ typedef struct {
 
 void ResetTimerString(u8 * timerString);
 void ResetTimer(Timer * timer);
-void AdvanceTimerObject(Timer * timer, u8 * timerString, s32 delta);
 void AdvanceTimer(Timer * timer);
 void DrawTimer(Timer * timer);
 

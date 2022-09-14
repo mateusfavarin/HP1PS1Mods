@@ -1,9 +1,11 @@
 #include <types.h>
 #include <functions.h>
 #include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "timer.h"
 #define STRAT_SIZE 0x5B
+#define STRAT_KERNEL_MEM 0x8000F500
 
 LevelSelector levelSelector = {
     .tribe = 1,
@@ -14,8 +16,8 @@ LevelSelector levelSelector = {
 };
 
 SaveStateManager states = {
-    .PlayerSaveState = (u32 *) 0x8000E400,
-    .CameraSaveState = (u32 *) (0x8000E400 + (STRAT_SIZE * 4)),
+    .PlayerSaveState = (u32 *) STRAT_KERNEL_MEM,
+    .CameraSaveState = (u32 *) (STRAT_KERNEL_MEM + (STRAT_SIZE * 4)),
     .hasSaved = 0,
 };
 
@@ -59,18 +61,11 @@ OptionsManager options = {
 
 u32 resetTimer = 0;
 
-void Hook_InitGame()
-{
-    InitGame();
-    FCOpen("GERMAN.BIN");
-    FCRead((u8 *) 0x8000C400, 0x1B00); // Loading our custom assembly
-    ForceStartGameLevel = 1; // Skip first story book
-    ForceUnpause = 0; // You can pause at anytime
-}
-
 u32 * Hook_ReadWad(u8 tribeIndex, u8 levelIndex, u8 mapIndex, u8 levelType)
 {
     states.hasSaved = 0;
+    timer.currVBlank = -1;
+    lagTimer.currVBlank = -1;
     if (levelSelector.loadLevel)
     {
         levelSelector.loadLevel = 0;
@@ -103,7 +98,7 @@ void HandleSaveStates()
     {
         if (ButtonsTapped & CIRCLE)
         {
-            for (int i = 0; i < STRAT_SIZE; i++)
+            for (u32 i = 0; i < STRAT_SIZE; i++)
             {
                 states.PlayerSaveState[i] = PlayerStrat[i];
                 states.CameraSaveState[i] = CameraStrat[i];
@@ -115,7 +110,7 @@ void HandleSaveStates()
             if ((states.hasSaved) && ((ButtonsHeld & (CROSS | SQUARE)) == (CROSS | SQUARE)))
             {
                 ButtonsHeld &= ~(CROSS | SQUARE);
-                for (int i = 0; i < STRAT_SIZE; i++)
+                for (u32 i = 0; i < STRAT_SIZE; i++)
                 {
                     PlayerStrat[i] = states.PlayerSaveState[i];
                     CameraStrat[i] = states.CameraSaveState[i];

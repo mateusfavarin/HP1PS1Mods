@@ -1,6 +1,6 @@
-#ifndef LEVEL8MENU_H
-#define LEVEL8MENU_H
 #include <types.h>
+#include <addresses.h>
+#include "game.h"
 #include "pause.h"
 #include "strings.h"
 
@@ -38,8 +38,6 @@ CustomText * ct_level8Arr[] = {&ct_dungeonSecret, &ct_secretBulbOutdoorSection, 
                             &ct_trollBoss2};
 u8 level8_isSelected[] = {0, 0, 0, 0};
 
-extern LevelSelector levelSelector;
-
 void Level8_onSelect(void * pauseMenu)
 {
     CustomPause * customPauseMenu = (CustomPause *) pauseMenu;
@@ -67,5 +65,3 @@ CustomMenu cm_level8 = {
     .onSelect = Level8_onSelect,
     .onBack = Level8_onBack
 };
-
-#endif

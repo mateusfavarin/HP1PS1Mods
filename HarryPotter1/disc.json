@@ -23,9 +23,14 @@
             ],
             "POTTER.DAT": [
                 {
-                    "name"      :   "potter",
-                    "address"   :   "0x8000C400",
-                    "offset"    :   "0x117800"
+                    "name"      :   "danish",
+                    "address"   :   "0x8000A000",
+                    "offset"    :   "0x4C800"
+                },
+                {
+                    "name"      :   "dutch",
+                    "address"   :   "0x8000E500",
+                    "offset"    :   "0x61000"
                 }
             ]
         }

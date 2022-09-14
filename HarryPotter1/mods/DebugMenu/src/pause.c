@@ -1,19 +1,9 @@
 #include <types.h>
 #include <functions.h>
 #include <addresses.h>
+#include "game.h"
 #include "pause.h"
-#include "cheatMenu.h"
-#include "debugMenu.h"
-#include "selectLevelMenu.h"
-#include "optionsMenu.h"
-#include "level1Menu.h"
-#include "level2Menu.h"
-#include "level3Menu.h"
-#include "level4Menu.h"
-#include "level6Menu.h"
-#include "level7Menu.h"
-#include "level8Menu.h"
-#include "level9Menu.h"
+#include "strings.h"
 
 CustomMenu * menus[] = {&cm_debugMenu, &cm_cheatMenu, &cm_selectLevel, &cm_optionsMenu,
                         &cm_level1, &cm_level2, &cm_level3, &cm_level4, &cm_level6,

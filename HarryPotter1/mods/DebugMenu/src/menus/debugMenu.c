@@ -1,5 +1,3 @@
-#ifndef DEBUGMENU_H
-#define DEBUGMENU_H
 #include <types.h>
 #include "pause.h"
 #include "strings.h"
@@ -47,5 +45,3 @@ CustomMenu cm_debugMenu = {
     .cursor = 0,
     .onSelect = DebugMenu_onSelect,
 };
-
-#endif

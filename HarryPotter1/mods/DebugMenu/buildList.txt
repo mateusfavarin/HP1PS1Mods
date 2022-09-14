@@ -1,12 +1,13 @@
-ntsc_u, exe, 0x80026648, 0x0, src/hook_ReadWad.s
-ntsc_u, exe, 0x80030458, 0x0, src/hook_HandlePause.s
-ntsc_u, exe, 0x800101b8, 0x0, src/hook_StartFrame.s
-ntsc_u, exe, 0x8002768c, 0x0, src/hook_ProcessStrategies.s
-ntsc_u, exe, 0x8001002c, 0x0, src/hook_InitGame.s
-ntsc_u, exe, 0x80010230, 0x0, src/hook_LevelSwitch.s
-ntsc_u, exe, 0x80053e68, 0x0, src/hook_DrawLoadingBar.s
-// PSX
-ntsc_u, header, 0x8000B0BC, 0x0, src/main.c src/timer.c
-// PS2
-//ntsc_u, header_ps2, 0x8000A91C, 0x0, src/main.c src/timer.c
-ntsc_u, potter, 0x8000C400, 0x0, src/pause.c
+// hooks
+ntsc_u, exe, 0x80026648, 0x0, src/asm/hook_ReadWad.s
+ntsc_u, exe, 0x80030458, 0x0, src/asm/hook_HandlePause.s
+ntsc_u, exe, 0x800101b8, 0x0, src/asm/hook_StartFrame.s
+ntsc_u, exe, 0x8002768c, 0x0, src/asm/hook_ProcessStrategies.s
+ntsc_u, exe, 0x8001002c, 0x0, src/asm/hook_InitGame.s
+ntsc_u, exe, 0x80010230, 0x0, src/asm/hook_LevelSwitch.s
+ntsc_u, exe, 0x80053e68, 0x0, src/asm/hook_DrawLoadingBar.s
+// mod code
+ntsc_u, exe, 0x800769fc, 0x0, src/entry.c
+//
+ntsc_u, dutch, 0x8000E500, 0x0, src/main.c src/timer.c src/pause.c
+ntsc_u, danish, 0x8000A000, 0x0, src/strings.c src/menus/*.c
